@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Play, ShoppingBag, Heart, Share2, ArrowRight, ArrowUpRight, Globe } from "lucide-react"
-import { motion } from "framer-motion"
+// Line 7: Use "type Variants" with a Capital V
+import { motion, type Variants } from "framer-motion"
 
 export function Hero() {
-    const containerVariants = {
+    // Line 10: Use ": Variants" with a Capital V
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -18,9 +20,17 @@ export function Hero() {
         },
     }
 
-    const itemVariants = {
+    // Use ": Variants" with a Capital V here too
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"
+            }
+        },
     }
 
     return (
